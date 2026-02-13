@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ChoreQuest Design System - Fun & Colorful Theme
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Primary - Vibrant Purple */
+    --primary: 271 91% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Background & Surface */
+    --background: 270 50% 98%;
+    --foreground: 271 50% 15%;
+
+    /* Cards - Slightly purple tinted white */
+    --card: 270 40% 99%;
+    --card-foreground: 271 50% 15%;
+
+    --popover: 270 40% 99%;
+    --popover-foreground: 271 50% 15%;
+
+    /* Secondary - Soft lavender */
+    --secondary: 270 40% 94%;
+    --secondary-foreground: 271 50% 20%;
+
+    /* Muted - Light purple gray */
+    --muted: 270 20% 92%;
+    --muted-foreground: 270 10% 45%;
+
+    /* Accent - Playful teal */
+    --accent: 175 70% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive - Friendly red */
+    --destructive: 0 72% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Fun Colors for Gamification */
+    --points: 45 100% 50%;
+    --points-foreground: 45 100% 20%;
+    --success: 145 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 35 100% 55%;
+    --warning-foreground: 35 100% 15%;
+
+    /* Border & Input */
+    --border: 270 30% 88%;
+    --input: 270 30% 88%;
+    --ring: 271 91% 65%;
+
+    --radius: 1rem;
+
+    /* Sidebar */
+    --sidebar-background: 270 40% 97%;
+    --sidebar-foreground: 271 50% 20%;
+    --sidebar-primary: 271 91% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 40% 94%;
+    --sidebar-accent-foreground: 271 50% 20%;
+    --sidebar-border: 270 30% 88%;
+    --sidebar-ring: 271 91% 65%;
+  }
+
+  .dark {
+    --primary: 271 91% 70%;
+    --primary-foreground: 271 50% 10%;
+
+    --background: 271 50% 8%;
+    --foreground: 270 20% 95%;
+
+    --card: 271 40% 12%;
+    --card-foreground: 270 20% 95%;
+
+    --popover: 271 40% 12%;
+    --popover-foreground: 270 20% 95%;
+
+    --secondary: 271 30% 18%;
+    --secondary-foreground: 270 20% 95%;
+
+    --muted: 271 30% 20%;
+    --muted-foreground: 270 15% 60%;
+
+    --accent: 175 70% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --points: 45 100% 55%;
+    --points-foreground: 45 100% 10%;
+    --success: 145 70% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 35 100% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 271 30% 22%;
+    --input: 271 30% 22%;
+    --ring: 271 91% 70%;
+
+    --sidebar-background: 271 40% 10%;
+    --sidebar-foreground: 270 20% 95%;
+    --sidebar-primary: 271 91% 70%;
+    --sidebar-primary-foreground: 271 50% 10%;
+    --sidebar-accent: 271 30% 18%;
+    --sidebar-accent-foreground: 270 20% 95%;
+    --sidebar-border: 271 30% 22%;
+    --sidebar-ring: 271 91% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  /* Gradient utilities */
+  .gradient-fun {
+    @apply bg-gradient-to-br from-primary via-purple-500 to-pink-500;
+  }
+
+  .gradient-success {
+    @apply bg-gradient-to-r from-success to-emerald-400;
+  }
+
+  .gradient-points {
+    @apply bg-gradient-to-r from-points via-amber-400 to-orange-400;
+  }
+
+  .gradient-header {
+    @apply bg-gradient-to-r from-primary to-purple-600;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  /* Points badge styling */
+  .points-badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full bg-points/20 text-points-foreground font-semibold;
+  }
+}
+
+/* Animations */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
